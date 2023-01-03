@@ -1,24 +1,24 @@
 @charset "UTF-8";
 
 /* Light theme color */
-$light-background: #fff;
-$light-background-secondary: #eaeaea;
-$light-background-header: #fafafa;
-$light-color: #222;
-$light-color-variant: black;
-$light-color-secondary: #999;
-$light-border-color: #dcdcdc;
-$light-table-color: #dcdcdc;
+$light-background: #eff1f5; // base
+$light-background-secondary: #e6e9ef; // mantle
+$light-background-header: #dce0e8; // crust
+$light-color: #4c4f69; // text
+$light-color-variant: #5c5f77; // subtext1
+$light-color-secondary: #ccd0da; // subtext0
+$light-border-color: #9ca0b0; // Overlay0
+$light-table-color: #ccd0da; // Surface0
 
 /* Dark theme colors */
-$dark-background: #303446; // done
-$dark-background-secondary: #292c3c;
-$dark-background-header: #232634; // done
-$dark-color: #c6d0f5; // done
-$dark-color-variant: #b5bfe2; // done
-$dark-color-secondary: #a5adce; // done
-$dark-border-color: #737994; // done
-$dark-table-color: #414559; // done
+$dark-background: #303446; // base
+$dark-background-secondary: #292c3c; // mantle
+$dark-background-header: #232634; // crust
+$dark-color: #c6d0f5; // text
+$dark-color-variant: #b5bfe2; // subtext1
+$dark-color-secondary: #a5adce; // subtext0
+$dark-border-color: #737994; // Overlay0
+$dark-table-color: #414559; // Surface0
 
 $media-size-phone: "(max-width: 684px)";
 $media-size-tablet: "(max-width: 900px)";
