@@ -35,6 +35,14 @@ function switchTheme(e) {
   window.location.reload();
 }
 
+window.onload = function () {
+  let els = document.querySelectorAll("pre[class*='language-']");
+  els.forEach(element => {
+    console.log(element.getAttribute('style'));
+    element.setAttribute('style', "");
+  });
+}
+
 // Event listener
 if (themeToggle) {
   themeToggle.addEventListener("click", switchTheme, false);
