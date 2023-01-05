@@ -223,6 +223,15 @@
     }
 
     &-content {
+      @media (prefers-color-scheme: dark) {
+        background-color: $dark-background-secondary;
+      }
+
+      @media (prefers-color-scheme: light) {
+        background-color: $light-background-secondary;
+      }
+
+
       position: relative;
       height: 100%;
       overflow-y: hidden;
@@ -230,11 +239,11 @@
 
     &-item {
       @media (prefers-color-scheme: dark) {
-        background-color: $dark-background-secondary;
+        background-color: $dark-background-header;
       }
 
       @media (prefers-color-scheme: light) {
-        background-color: $light-background-secondary;
+        background-color: $light-background-header;
       }
 
       aspect-ratio: 1/1;
