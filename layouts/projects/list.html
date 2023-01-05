@@ -34,7 +34,7 @@
                     {{ end }}
                     {{ if .Params.image }}
                     {{ $image := .Resources.GetMatch .Params.image }}
-                    {{ $image := $image.Resize "400x" }}
+                    {{ $image := $image.Resize "600x" }}
                     <img class="project-image" src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
                     {{ end }}
                 </div>
