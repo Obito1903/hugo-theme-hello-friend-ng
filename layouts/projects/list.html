@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Data.Pages }}
+<main class="projects">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Content }}
+    <div class="content">{{ .Content }}</div>
+    {{ end }}
+
+    {{ range $paginator.Pages.GroupByDate "2006" }}
+    <div class="projects-group">
+        <div class="project-year">{{ .Key }}</div>
+
+        <div class="projects-list">
+            {{ range .Pages }}
+            {{/* <div class="project-item">
+                <a href="{{ .Permalink }}">
+                    <span class="project-title">{{ .Title }}</span>
+                    <div class="project-content">
+                    </div>
+                    {{ if .Params.image }}
+                    {{ $image := .Resources.GetMatch .Params.image }}
+                    <img class="project-image" src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+                    {{ else if .Description }}
+                    <p class="project-desc">{{ .Description }}</p>
+                    {{ end }}
+                </a>
+            </div> */}}
+            <a class="project-item" href="{{ .Permalink }}">
+                <span class="project-title">{{ .Title }}</span>
+                <div class="project-content">
+                    {{ if .Description }}
+                    <p class="project-desc">{{ .Description }}</p>
+                    {{ end }}
+                    {{ if .Params.image }}
+                    {{ $image := .Resources.GetMatch .Params.image }}
+                    {{ $image := $image.Resize "400x" }}
+                    <img class="project-image" src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+                    {{ end }}
+                </div>
+            </a>
+            {{ end }}
+        </div>
+
+
+        {{/* <ul class="projects-list">
+            {{ range .Pages }}
+            <li class="project-item">
+                <a href="{{.Permalink}}">
+                    <span class="project-title">{{.Title}}</span>
+                    <span class="project-day">
+                        {{ if .Site.Params.dateformShort }}
+                        {{ .Date.Format .Site.Params.dateformShort }}
+                        {{ else }}
+                        {{ .Date.Format "Jan 2"}}
+                        {{ end }}
+                    </span>
+
+                </a>
+            </li>
+            {{ end }}
+        </ul> */}}
+
+        {{/* {{ if .Params.image }}
+        {{ $image := .Resources.GetMatch .Params.image }}
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+        {{ end }} */}}
+
+    </div>
+    {{ end }}
+
+    {{ partial "pagination-list.html" . }}
+</main>
+{{ end }}
