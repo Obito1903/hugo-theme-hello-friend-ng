@@ -65,7 +65,18 @@
     }
 
     &-item {
-      border-bottom: 1px grey dashed;
+      border-bottom: 1px $dark-border-color dashed;
+
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 1px $dark-border-color dashed;
+
+      }
+
+      @media (prefers-color-scheme: light) {
+        border-bottom: 1px $light-border-color dashed;
+
+      }
+
 
       a {
         display: flex;
