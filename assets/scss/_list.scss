@@ -233,7 +233,22 @@
         margin: 0.5em;
 
         svg {
-          fill: $dark-color;
+          @media (prefers-color-scheme: dark) {
+            fill: $dark-color-secondary;
+          }
+
+          @media (prefers-color-scheme: light) {
+            fill: $light-color-secondary;
+          }
+
+          [data-theme=dark] & {
+            fill: $dark-color-secondary;
+          }
+
+          [data-theme=light] & {
+            fill: $light-color-secondary;
+          }
+
           width: 1.2em;
           height: 1.2em;
           margin-right: 0.4em;
