@@ -37,3 +37,9 @@ other = "{{ .Count }} Words"
 
 [lastModified]
 other = "Last updated"
+
+[projects]
+other = "Projects"
+
+[external-links]
+other = "External links"
