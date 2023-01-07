@@ -1,4 +1,4 @@
-{{ if .Params.link }}
+{{ if or .Params.link .Params.repo }}
 <div class="external-separator">
     <span class="external-separator-h">External Links</span>
     <hr />
